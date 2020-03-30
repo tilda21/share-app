@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes/api');
 const path = require('path');
+const errorHandler = require("errorhandler");
+const cors = require("cors");
 require('dotenv').config();
 
 const app = express();
@@ -25,15 +27,19 @@ app.use((req, res, next) => {
 });
 
 app.use(bodyParser.json());
+app.use(errorHandler());
+app.use(cors());
 
 // to deploy
 app.use(express.static(path.join(__dirname, "client", "build")))
 
 app.use('/api', routes);
 
-app.use((err, req, res, next) => {
-  console.log(err);
-  next();
+
+
+// to deploy
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(port, () => {
