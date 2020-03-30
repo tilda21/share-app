@@ -12,7 +12,7 @@ router.get('/newInfos', (req, res, next) => {
 });
 
 router.post('/newInfos', (req, res, next) => {
-    console.log(req.body)
+    
     if(req.body.information){
         NewInfo.create(req.body)
         .then(data => res.json(data))
