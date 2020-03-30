@@ -26,6 +26,9 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 
+// to deploy
+app.use(express.static(path.join(__dirname, "client", "build")))
+
 app.use('/api', routes);
 
 app.use((err, req, res, next) => {
