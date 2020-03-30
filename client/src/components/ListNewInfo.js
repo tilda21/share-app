@@ -11,13 +11,13 @@ const ListNewInfo = ({ newInfos, deleteNewInfo }) => {
             (
               newInfos.map(newInfo => {
                 return (
-                  <li key={newInfo._id} onClick={() => deleteNewInfo(newInfo._id)}><div>{newInfo.information}</div></li>
+                  <li key={newInfo._id}><div className='bigWidth'>{newInfo.information}</div><div className='smallWidth'><button className='delete' onClick={() => deleteNewInfo(newInfo._id)}>Delete</button></div></li>
                 )
               })
             )
             :
             (
-              <li>Nada partilhado</li>
+              <li><div>Nada partilhado</div></li>
             )
       }
     </ul>

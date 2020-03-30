@@ -12,7 +12,7 @@ div#inputs {
 
 input#information {
   height: 40px;
-  width: 50%;
+  width: 75%;
   border: none;
   border-bottom: 2px #282c34 solid;
   background: none;
@@ -56,13 +56,25 @@ li {
   margin-bottom: 15px;
   background: #282c34;
   border-radius: 5px;
-  cursor: pointer;
   display: flex;
 }
+
 
 li div {
   text-align: center;
   width: 100%;
+  margin: auto;
+}
+li div.bigWidth {
+  width: 75%;
+}
+li div.smallWidth {
+  width: 25%;
+}
+button.delete {
+  width: 75%;
+  cursor: pointer;
+
 }
 
 li#title {
