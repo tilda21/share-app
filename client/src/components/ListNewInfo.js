@@ -11,7 +11,12 @@ const ListNewInfo = ({ newInfos, deleteNewInfo }) => {
             (
               newInfos.map(newInfo => {
                 return (
-                  <li key={newInfo._id}><div className='bigWidth'>{newInfo.information}</div><div className='smallWidth'><button className='delete' onClick={() => deleteNewInfo(newInfo._id)}>Delete</button></div></li>
+                  <li key={newInfo._id}>
+                    <div className='bigWidth'><a href={newInfo.information} target="_blank" rel="noopener noreferrer">{newInfo.information}</a></div>
+                    <div className='smallWidth'>
+                      <button className='delete' onClick={() => deleteNewInfo(newInfo._id)}>Delete</button>
+                    </div>
+                  </li>
                 )
               })
             )

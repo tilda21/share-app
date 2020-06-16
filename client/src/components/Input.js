@@ -39,8 +39,12 @@ class Input extends Component {
     let { information } = this.state;
     return (
       <div id='inputs'>
-        <input id="information" type="text" onChange={this.handleChange} value={information} />
-        <button onClick={this.addNewInfo}>Adicionar</button>
+        <div className='bigWidth'>
+          <input id="information" type="text" onChange={this.handleChange} value={information} />
+        </div>
+        <div className='smallWidth'>
+          <button onClick={this.addNewInfo}>Adicionar</button>
+        </div>
       </div>
     )
   }
