@@ -1,7 +1,8 @@
+
 .App {
   text-align: center;
   font-size: calc(10px + 2vmin);
-  width: 60%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -9,10 +10,17 @@ div#inputs {
   width: 100%;
   display: flex;
 }
+div#inputs div.bigWidth {
+  width: 70%;
+}
+div#inputs div.smallWidth {
+  width: 30%;
+  margin: auto;
+}
 
 input#information {
   height: 40px;
-  width: 75%;
+  width: 100%;
   border: none;
   border-bottom: 2px #282c34 solid;
   background: none;
@@ -27,7 +35,6 @@ input:focus {
 
 
 button {
-  width: 25%;
   height: 45px;
   border: none;
   margin-left: 10px;
@@ -67,6 +74,8 @@ li div {
 }
 li div.bigWidth {
   width: 75%;
+  overflow-wrap: break-word;  
+
 }
 li div.smallWidth {
   width: 25%;
@@ -83,14 +92,18 @@ li#title {
   font-size: 30px;
 }
 
+a:link {
+  color: #8c4c92;
+}
+a:hover {
+  color: hotpink;
+}
 
-@media only screen and (min-width: 300px) {
+@media only screen and (max-width: 500px) {
+
+  
   .App {
-    width: 80%;
-  }
-
-  input {
-    width: 100%
+    width: 100%;
   }
 
   button {
@@ -98,20 +111,55 @@ li#title {
     margin-top: 15px;
     margin-left: 0;
   }
-}
 
-@media only screen and (min-width: 640px) {
-  .App {
-    width: 60%;
+  div#inputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  div#inputs div.bigWidth {
+    width: 100%;
+  }
+  div#inputs div.smallWidth {
+    width: 90%;
+    margin: auto;
+  }
+  input#information {
+    width: 90%;
   }
 
-  input {
-    width: 50%;
+  li {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li div.bigWidth {
+    width: 100%;
+    overflow-wrap: break-word;  
+  }
+  li div.smallWidth {
+    width: 100%;
+  }
+ 
+}
+
+/* @media only screen and (min-width: 640px) {
+  .App {
+    width: 100%;
   }
 
   button {
-    width: 30%;
-    margin-left: 10px;
-    margin-top: 0;
+    width: 100%;
+    margin-top: 15px;
+    margin-left: 0;
   }
-}
+  li {
+    font-size: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li div {
+    width: 100%;
+  }
+} */
